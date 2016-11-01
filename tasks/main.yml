@@ -1,0 +1,8 @@
+---
+
+- include: install.yml
+
+- include: get-cert.yml
+
+# TODO: setup cron for auto renewal certifs
+# - include: auto-renew.yml

@@ -1,0 +1,6 @@
+---
+# Please read TOS from https://letsencrypt.org/repository/
+# certbot_agree_tos: "--agree-tos"
+cerbot_agree_tos: ""
+certbot_admin_email: "admin@example.org"
+certbot_www_dir: "/var/www"
