@@ -13,9 +13,10 @@ Basic example playbook:
     - hosts: servers
       roles:
          - role: paulrbr.certbot
-           cerbot_agree_tos: "--agree-tos"
+           certbot_agree_tos: "--agree-tos"
            certbot_admin_email: "admin@example.org"
            certbot_www_dir: "/var/www"
+           certbot_auto_renew: true
 
 License
 -------

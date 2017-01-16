@@ -1,0 +1,7 @@
+---
+- name:
+  cron:
+    name: "Renew SSL certificates on Let's encrypt"
+    minute: "0"
+    hour: "2"
+    job: "true | /opt/letsencrypt/certbot-auto renew"

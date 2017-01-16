@@ -4,5 +4,5 @@
 
 - include: get-cert.yml
 
-# TODO: setup cron for auto renewal certifs
-# - include: auto-renew.yml
+- include: auto-renew.yml
+  when: certbot_auto_renew | default(False)
