@@ -18,6 +18,13 @@ Basic example playbook:
            certbot_www_dir: "/var/www"
            certbot_auto_renew: true
 
+Makefile for easier Ansible usage
+------------------
+
+I have written a small Makefile to make your future ansible runs easier. Don't hesitate to [check it out](https://github.com/paulRbr/ansible-makefile/blob/master/Makefile).
+
+Copy it in your ansible configuration directory and start using it via `make help`.
+
 License
 -------
 
