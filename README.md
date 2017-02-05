@@ -12,7 +12,7 @@ Basic example playbook:
 
     - hosts: servers
       roles:
-         - role: paulrbr.certbot
+         - role: paulRbr.certbot
            certbot_agree_tos: "--agree-tos"
            certbot_admin_email: "admin@example.org"
            certbot_www_dir: "/var/www"
