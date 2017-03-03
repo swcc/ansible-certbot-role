@@ -7,3 +7,5 @@
     force: yes
     repo: https://github.com/certbot/certbot
     dest: /opt/letsencrypt
+  register: git_checkout
+  until: git_checkout|succeeded
