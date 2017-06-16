@@ -4,4 +4,4 @@
     name: "Renew SSL certificates on Let's encrypt"
     minute: "0"
     hour: "2"
-    job: "true | /opt/letsencrypt/certbot-auto renew"
+    job: "true | /opt/letsencrypt/certbot-auto renew > /var/log/certbot-renew.log"
