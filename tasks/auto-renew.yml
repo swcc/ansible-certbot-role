@@ -1,7 +1,11 @@
 ---
+- set_fact:
+    cron_deploy_hook: "--deploy-hook '{{ certbot_deploy_hook }}'"
+  when: certbot_deploy_hook is defined
+
 - name:
   cron:
     name: "Renew SSL certificates on Let's encrypt"
     minute: "0"
     hour: "2"
-    job: "true | /opt/letsencrypt/certbot-auto renew > /var/log/certbot-renew.log"
+    job: "true | /opt/letsencrypt/certbot-auto renew {{ cron_deploy_hook | default('') }} > /var/log/certbot-renew.log"

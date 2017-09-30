@@ -5,4 +5,4 @@
 - include: get-cert.yml
 
 - include: auto-renew.yml
-  when: certbot_auto_renew | default(False)
+  when: certbot_auto_renew

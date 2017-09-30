@@ -4,3 +4,4 @@
 cerbot_agree_tos: ""
 certbot_admin_email: "admin@example.org"
 certbot_www_dir: "/var/www"
+certbot_auto_renew: false
