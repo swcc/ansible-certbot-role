@@ -102,10 +102,6 @@ galaxy_info:
   #  - 9.3
   - name: Ubuntu
     versions:
-      - lucid
-      - maverick
-      - natty
-      - oneiric
       - precise
       - quantal
       - raring
@@ -113,17 +109,13 @@ galaxy_info:
       - trusty
       - utopic
       - vivid
-      - wily
       - xenial
   - name: Debian
     versions:
-      - etch
-      - jessie
-      - lenny
-      - sid
       - squeeze
-      - stretch
       - wheezy
+      - jessie
+      - stretch
   #- name: EL
   #  versions:
   #  - all
