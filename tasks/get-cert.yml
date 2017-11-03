@@ -1,6 +1,6 @@
 ---
 - name: Check existing key
-  stat: path=/etc/letsencrypt/live/{{ ansible_host }}/privkey.pem
+  stat: path=/etc/letsencrypt/live/{{ certbot_host | default(ansible_host) }}/privkey.pem
   register: key_file
 
 - name: Ensure www directory exist
@@ -9,5 +9,5 @@
     path: "{{ certbot_www_dir }}"
 
 - name: Ask for a certificate from Lets Encrypt
-  shell: "yes | /opt/letsencrypt/certbot-auto certonly {{ certbot_agree_tos }} --webroot -w {{ certbot_www_dir }} -d {{ ansible_host }} --email {{ certbot_admin_email }}"
+  shell: "yes | /opt/letsencrypt/certbot-auto certonly {{ certbot_agree_tos }} --webroot -w {{ certbot_www_dir }} -d {{ certbot_host | default(ansible_host) }} --email {{ certbot_admin_email }}"
   when: key_file.stat.islnk is not defined
