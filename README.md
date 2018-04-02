@@ -3,7 +3,7 @@ Certbot Ansible role
 
 Installs certbot from github sources. Fetch SSL certificate from Let's Encrypt CA for the target `ansible_host` domain.
 
-[![Build Status](https://travis-ci.org/swcc/ansible-certbot-role.svg?branch=master)](https://travis-ci.org/swcc/ansible-certbot-role) [![Ansible Galaxy](https://img.shields.io/ansible/role/18534.svg)](https://galaxy.ansible.com/swcc/certbot-role/)
+[![Build Status](https://travis-ci.org/swcc/ansible-certbot-role.svg?branch=master)](https://travis-ci.org/swcc/ansible-certbot-role) [![Ansible Galaxy](https://img.shields.io/ansible/role/18534.svg)](https://galaxy.ansible.com/swcc/certbot/)
 
 Example Playbook
 ----------------
