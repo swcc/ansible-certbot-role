@@ -20,13 +20,14 @@ Basic example playbook:
 Optional parameters
 ----------------
 
-| Variable      | Type          | Description  |
-| ------------- |:-------------:| ------------|
-| `certbot_auto_renew` | `boolean` | Whether to auto renew your certificate with a cron setup |
-| `certbot_deploy_hook`| `string`  | Command to execute after a successful renewed certificate. E.g. `/etc/init.d/nginx reload`. |
-| `certbot_host` | `string`        | Custom domain used to issue the certificate (if not provided defaults to `ansible_host`) |
-| `certbot_extra_hosts` | `array`  | A list of extra domains for which the certificate will be valid for (will provide a multi-domains certificate) |
-| `certbot_cert_name`   | `string` | The filename of the issued certificate by certbot. This will ensure your certificate is at `/etc/letsencrypt/live/{{ certbot_cert_name }}/fullchain.pem` path on your server. |
+| Variable                   | Type            | Description                                                                                                                                                                    |
+| -------------              | :-------------: | ------------                                                                                                                                                                   |
+| `certbot_auto_renew`       | `boolean`       | Whether to auto renew your certificate with a cron setup                                                                                                                       |
+| `certbot_deploy_hook`      | `string`        | Command to execute after a successful renewed certificate. E.g. `/etc/init.d/nginx reload`.                                                                                    |
+| `certbot_host`             | `string`        | Custom domain used to issue the certificate (if not provided defaults to `ansible_host`)                                                                                       |
+| `certbot_extra_hosts`      | `array`         | A list of extra domains for which the certificate will be valid for (will provide a multi-domains certificate)                                                                 |
+| `certbot_cert_name`        | `string`        | The filename of the issued certificate by certbot. This will ensure your certificate is at `/etc/letsencrypt/live/{{ certbot_cert_name }}/fullchain.pem` path on your server.  |
+| `certbot_challenge_method` | `string`        | Possible values: `webroot` or `nginx`. Method to use by certbot to perform challenge verification (webroot is if you already have a webserver, nginx if you don't have anyway) |
 
 
 Makefile for easier Ansible usage
