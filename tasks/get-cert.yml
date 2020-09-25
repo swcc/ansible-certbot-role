@@ -12,6 +12,19 @@
     state: directory
     path: "{{ certbot_www_dir }}"
 
-- name: Ask for a certificate from Lets Encrypt
+- name: Ask for a certificate from Lets Encrypt (webroot)
   shell: "yes | /opt/letsencrypt/certbot-auto certonly {{ certbot_agree_tos }} --webroot -w {{ certbot_www_dir }} --cert-name {{ certbot_cert_name }} -d {{ certbot_host | default(ansible_host) }}{% for extra_host in certbot_extra_hosts|default([]) %} -d {{ extra_host }} {% endfor %} --email {{ certbot_admin_email }}"
-  when: key_file.stat.islnk is not defined
+  when:
+    - key_file.stat.islnk is not defined
+    - certbot_challenge_method == "webroot"
+
+- name: Install nginx if needed
+  apt:
+    name: nginx
+  when: certbot_challenge_method == "nginx"
+
+- name: Ask for a certificate from Lets Encrypt (nginx plugin)
+  shell: "yes | /opt/letsencrypt/certbot-auto certonly {{ certbot_agree_tos }} --nginx --cert-name {{ certbot_cert_name }} -d {{ certbot_host | default(ansible_host) }}{% for extra_host in certbot_extra_hosts|default([]) %} -d {{ extra_host }} {% endfor %} --email {{ certbot_admin_email }}"
+  when:
+    - key_file.stat.islnk is not defined
+    - certbot_challenge_method == "nginx"

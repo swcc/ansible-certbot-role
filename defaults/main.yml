@@ -4,4 +4,11 @@
 cerbot_agree_tos: ""
 certbot_admin_email: "admin@example.org"
 certbot_www_dir: "/var/www"
+
+# How to perform verification challenges
+# - by default use webroot directory to serve http challenges
+certbot_challenge_method: "webroot"
+# - If you don't have an existing web server you can use the nginx auth plugin instead
+# certbot_challenge_method: "nginx"
+
 certbot_auto_renew: false
