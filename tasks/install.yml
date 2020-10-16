@@ -1,6 +1,8 @@
 ---
 - name: Install git
-  apt: name=git state=installed
+  apt:
+    name: git
+    state: present
 
 - name: Checkout certbot
   git:
@@ -8,4 +10,5 @@
     repo: https://github.com/certbot/certbot
     dest: /opt/letsencrypt
   register: git_checkout
-  until: git_checkout|succeeded
+  until: git_checkout is not failed
+  retries: 5
